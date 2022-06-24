@@ -1,7 +1,6 @@
 package com.bridgelabz;
 
 public class BinarySearchTreeMain {
-	static boolean flag = true;
 	
 	public static void main(String[] args) {
 

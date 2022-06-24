@@ -2,8 +2,7 @@ package com.bridgelabz;
 
 public class BinarySearchTree {
 	Node root;
-	static boolean flag = true;
-
+	
 	public void insert(int data) {
 		Node node = new Node(data);
 		node.data = data;
