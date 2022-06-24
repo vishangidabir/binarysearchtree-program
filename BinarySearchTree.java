@@ -36,6 +36,7 @@ public class BinarySearchTree {
 		if (node.left != null) {
 			inorderDisplay(node.left);
 		}
+		
 		System.out.print(node.data + " ");
 
 		if (node.right != null) {

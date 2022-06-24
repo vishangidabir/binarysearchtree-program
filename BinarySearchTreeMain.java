@@ -14,6 +14,7 @@ public class BinarySearchTreeMain {
 		tree.insert(70);
 	
 		System.out.println("\nBinary search tree after insertion of element");
+		
 		// Display the binary tree
 		tree.inorderDisplay(tree.root);
 	}
