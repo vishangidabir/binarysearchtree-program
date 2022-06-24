@@ -42,5 +42,4 @@ public class BinarySearchTree {
 			inorderDisplay(node.right);
 		}
 	}
-
 }
