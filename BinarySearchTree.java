@@ -1,50 +1,51 @@
 package com.bridgelabz;
 
-import java.util.Stack;
-
 public class BinarySearchTree {
 	Node root;
+	static boolean flag = true;
+	
+	public void insert(int data) {
+		Node node = new Node(data);
+		node.data = data;
+		node.left = null;
+		node.right = null;
 
-	public void insert(int value) {
-		Node node = new Node(value);
 		if (root == null) {
 			root = node;
 			return;
-		}
-		if (root.data > value) {
-			if (root.left == null) {
-				root.left = node;
-				return;
-			} 
-			else if(root.left != null) {
-				root = root.left;
-				root.right= node;
-				return;
+		} else {
+			Node parent = root;
+			Node current = root;
+			while (current != null) {
+				parent = current;
+				if (node.data > current.data) {
+					current = current.right;
+				} else {
+					current = current.left;
+				}
 			}
-			//insert(value);
-		}
-		else if (root.data < value) {
-			if (root.right == null) {
-				root.right = node;
-				return;
-			}
-			//insert(value);
-		}
-	}
-
-	public void inorder() {
-		Node temp = root;
-		Stack<Node> stack = new Stack<>();
-		while (temp != null || !stack.isEmpty()) {
-			if (temp != null) {
-				stack.add(temp);
-				temp = temp.left;
+			if (node.data > parent.data) {
+				parent.right = node;
 			} else {
-				temp = stack.pop();
-				System.out.print(temp.value + " ");
-				temp = temp.right;
+				parent.left = node;
 			}
 		}
 	}
 
+	public void inorderDisplay(Node node) {
+		if (node.left != null) {
+			inorderDisplay(node.left);
+		}
+		System.out.print(node.data+" ");
+
+		if (node.right != null) {
+			inorderDisplay(node.right);
+		}
+	}
+	
+	
 }
+
+
+
+

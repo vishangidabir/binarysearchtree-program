@@ -1,13 +1,11 @@
 package com.bridgelabz;
 
 public class Node {
-	int value;
+	int data;
 	Node left;
 	Node right;
 	
-	public int data;
-
-	Node(int val) {
-		this.value = value;
+	Node(int data) {
+		this.data = data;
 	}
 }
